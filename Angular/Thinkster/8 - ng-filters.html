@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/ngfilter/"> ngFilters </a>
+		<div ng-app="myApp" ng-controller="AvengerCtrl">
+			<h3> Search on everything </h3>
+			<div class="examples">
+				Search: <input type="text" ng-model="searchText" /><br><br>
+				<table>
+					<tr ng-repeat="actor in Avengers.cast | filter:searchText">
+						<td>{{actor.Name}}</td>
+						<td>{{actor.Character}} </td>
+					</tr>
+				</table>
+			</div>
+			<h3> Search on specific field (Name)  </h3>
+			<div class="examples">
+				Search: <input type="text" ng-model="search.Name" /><br><br>
+				<table>
+					<tr ng-repeat="actor in Avengers.cast | filter:search">
+						<td>{{actor.Name}}</td>
+						<td>{{actor.Character}} </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var myApp = angular.module('myApp', []);
+			
+			myApp.factory('Avengers', function(){
+				var Avengers = {};
+				Avengers.cast =[ { 
+									"Character" : "Tony Stark / Iron Man",
+								    "Name" : "Robert Downey Jr."
+								  },
+								  { "Character" : "Steve Rogers / Captain America}",
+								    "Name" : "Chris Evans"
+								  },
+								  { "Character" : "Bruce Banner / The Hulk",
+								    "Name" : "Mark Ruffalo"
+								  },
+								  { "Character" : "Thor",
+								    "Name" : "Chris Hemsworth"
+								  },
+								  { "Character" : "Natasha Romanoff / Black Widow",
+								    "Name" : "Scarlett Johansson"
+								  },
+								  { "Character" : "Clint Barton / Hawkeye",
+								    "Name" : "Jeremy Renner"
+								  },
+								  { "Character" : "Loki",
+								    "Name" : "Tom Hiddleston"
+								  },
+								  { "Character" : "Agent Phil Coulson",
+								    "Name" : "Clark Gregg"
+								  },
+								  { "Character" : "Agent Maria Hill",
+								    "Name" : "Cobie Smulders"
+								  },
+								  { "Character" : "Selvig",
+								    "Name" : "Stellan Skarsgard"
+								  },
+								  { "Character" : "Nick Fury",
+								    "Name" : "Samuel L. Jackson"
+								  },
+								  { "Character" : "Pepper Potts",
+								    "Name" : "Gwyneth Paltrow"
+								  },
+								  { "Character" : "Jarvis (voice)",
+								    "Name" : "Paul Bettany"
+								  },
+								  { "Character" : "The Other",
+								    "Name" : "Alexis Denisof"
+								  },
+								  { "Character" : "NASA Scientist",
+								    "Name" : "Tina Benko" }]
+				return Avengers;
+			});
+
+			myApp.controller('AvengerCtrl', function($scope, Avengers){
+				$scope.Avengers = Avengers;
+			});
+			
+		</script>
+	</body>
+</html>

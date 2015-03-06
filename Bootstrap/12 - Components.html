@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="/ico/favicon.png">
+		<title> I'm trying bootstrap </title>
+		<!-- bootstrap.min.css / bootstrap-theme.min.css-->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<!-- Try also without the theme / Performance -->
+		<link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h2> Navigation bar </h2>
+		<div class="container">
+			<nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> Site name </a>
+				</div>
+		        <ul class="nav navbar-nav">
+		          	<li class="active"> <a href="#">Home</a> </li>
+		          	<li> <a href="#">Link</a> </li>
+		          	<li> <a href="#">User</a> </li>
+		          	<li> <a href="#">News</a> </li>
+		        </ul>
+		        <form class="navbar-form pull-right">
+		          	<input type="text" style="width:150px" class="input-small" placeholder="Search">
+		          	<button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Search </button>
+		        </form>
+		    </nav>
+		    <nav class="navbar navbar-default">
+			 	<div class="navbar-header">
+			    	<a class="navbar-brand" href="#">Button</a>
+			  	</div> 
+			  	<p class="navbar-text">Connection :</p>
+			  	<button type="button" class="btn btn-default navbar-btn">Login</button>
+			</nav>
+		</div>
+		<h2> Pagination </h2>
+		<div class="container">
+			<ul class="pagination">
+				<li><a href="#"><<</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">>></a></li>
+			</ul>
+			<ul class="pager">
+				<li><a href="#">Previous</a></li>
+				<li><a href="#">Next</a></li>
+			</ul>
+			<ul class="pager col-lg-4">
+			  	<li class="previous"><a href="#"><span class="glyphicon glyphicon-backward"></span> Previous</a></li>
+			  	<li class="next"><a href="#">Next <span class="glyphicon glyphicon-forward"></span></a></li>
+			</ul>
+		</div>
+		<h2> Navigation help </h2>
+		<div class="container">
+			<ul class="breadcrumb">
+			  	<li><a href="#">Infos 1 </a></li>
+			  	<li><a href="#">Infos 2 </a></li>
+			  	<li class="active">Infos 3</li>
+			</ul>
+		</div>
+		<h2> Jumbotron </h2>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Jumbotron</h1>
+			    <p>Take some place</p>
+			    <p><a class="btn btn-info btn-lg" role="button"> Click here  <span class="glyphicon glyphicon glyphicon-hand-right"></span></a></p>
+			</div>
+		</div>
+		<h2> Label </h2>
+		<div class="container">
+			<p><span class="label label-default"> Default </span> 600</p>
+			<p><span class="label label-info"> Info </span> 4000</p>
+			<p><span class="label label-success"> Success </span> 8000</p>
+			<p><span class="label label-warning"> Warning </span> 11000</p>
+			<p><span class="label label-danger"> Danger </span> 12000</p>
+		</div>
+		<h2> Badge </h2>
+		<div class="container">
+			<a href="#">Messages <span class="badge">42</span></a>
+			<br /><br />
+			<button class="btn btn-danger">Send <span class="badge text-success">42</span></button>
+		</div>
+		<h2> Thumbnail </h2>
+		<div class="container">
+			<address class="thumbnail">
+			  	<p>Contact me :</p>
+			  	<strong>Yoyo</strong><br>
+			    Bla bla <br>
+			    28645 blo blo <br>
+			</address>
+		</div>
+		<h2> Group List </h2>
+		<div class="container">
+			<div class="col-lg-2">
+			   <ul class="list-group">
+				  <li class="list-group-item">
+				    <span class="badge">22</span>
+				    Item 1
+				  </li>
+				  <li class="list-group-item">
+				    <span class="badge">12</span>
+				    Item 2
+				  </li>
+				  <li class="list-group-item">
+				    <span class="badge">33</span>
+				    Item 3 
+				  </li>
+				  <li class="list-group-item">
+				    <span class="badge">87</span>
+				    Item 4
+				  </li>
+				</ul>
+				<ul class="list-group">
+				  	<a href="#" class="list-group-item active">
+				    	<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+				      	Item 1
+				  	</a>
+				  	<a href="#" class="list-group-item">
+				    	<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+				      	Item 2
+				  	</a>
+				  	<a href="#" class="list-group-item">
+				    	<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+				      	Item 3
+				  	</a>
+				  	<a href="#" class="list-group-item">
+				    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+				      Item 4
+				  	</a>
+				</ul>
+			</div>
+		</div>
+		<h2> Panel </h2>
+		<div class="container">
+			<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Title</h3>
+			  	</div>
+			  	<div class="panel-body">Content</div>
+			  	<div class="panel-footer">Footer</div>
+			</div>
+			<div class="panel panel-primary">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Title</h3>
+			  	</div>
+			  	<div class="panel-body">Content</div>
+			</div>
+			<div class="panel panel-success">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Title</h3>
+			  	</div>
+			  	<div class="panel-body">Content</div>
+			</div>
+			<div class="panel panel-warning">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Title</h3>
+			  	</div>
+			  	<div class="panel-body">Content</div>
+			</div>
+			<div class="panel panel-danger">
+			  	<div class="panel-heading">
+			   	 	<h3 class="panel-title">Title</h3>
+			  	</div>
+			  	<div class="panel-body">Content</div>
+			</div>
+			<div class="panel panel-info">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Title</h3>
+			  	</div>
+			  	<div class="panel-body">Content</div>
+			</div>
+		</div>
+		<h2> Alert </h2>
+		<div class="container">
+			<div class="alert col-lg-2 alert-warning">
+			    <strong>Warning !</strong>
+			</div>
+			<div class="alert col-lg-offset-1 col-lg-2 alert-info alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			    <strong>Infos !</strong>
+			</div>
+			<div class="alert col-lg-offset-1 col-lg-2 alert-success">
+			    <strong>Success !</strong>
+			</div>
+			<div class="alert col-lg-offset-1 col-lg-2 alert-danger">
+			    <strong>Danger ! <a href="#" class="alert-link"> Alert link </a> </strong>
+			</div>
+		</div>
+		<h2> Progress bar </h2>
+		<div class="container">
+			<div class="progress">
+			    <div class="progress-bar"></div>
+			</div>
+			<div class="progress progress-striped">
+			  	<div class="progress-bar"></div>
+			</div>
+			<div class="progress">
+			   <div class="progress-bar progress-bar-info"></div>
+			</div>
+			<div class="progress">
+			   <div class="progress-bar progress-bar-success"></div>
+			</div>
+			<div class="progress">
+			   <div class="progress-bar progress-bar-warning"></div>
+			</div>
+			<div class="progress">
+			   <div class="progress-bar progress-bar-danger"></div>
+			</div>
+			<div class="progress progress-striped">
+			   <div class="progress-bar progress-bar-info"></div>
+			</div>
+			<div class="progress progress-striped">
+			   <div class="progress-bar progress-bar-success"></div>
+			</div>
+			<div class="progress progress-striped">
+			   <div class="progress-bar progress-bar-warning"></div>
+			</div>
+			<div class="progress progress-striped">
+			   <div class="progress-bar progress-bar-danger"></div>
+			</div>
+			<input type="button" class="btn btn-primary" id="btnGo" value="Go">
+		</div>
+		<!-- bootstrap JavaScript + Jquery if requested -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+    	<script src="bootstrap/js/bootstrap.min.js"></script>
+    	<script>
+		  function timer(n) {
+		    $(".progress-bar").css("width", n + "%");
+		    if(n < 100) {
+		      setTimeout(function() {
+		        timer(n + 10);
+		      }, 200);
+		    }
+		  }
+		  $(function (){
+		    $("#btnGo").click(function() {
+		      timer(0);
+		    });
+		  });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="/ico/favicon.png">
+		<title> I'm trying bootstrap </title>
+		<!-- bootstrap.min.css / bootstrap-theme.min.css-->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<!-- Try also without the theme / Performance -->
+		<link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			.btn-round {
+			  width: 50px;
+			  height: 50px;
+			  border-radius: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2> Buttons </h2>
+		<div class="container">
+			<form>
+				<button type="button" class="btn btn-default">Button</button>
+				<a class="btn btn-default" href="#">Link Button</a>
+				<input class="btn btn-default" type="button" value="Input Button">
+				<br /><br />
+				<button type="button" class="btn btn-primary">Button</button>
+				<button type="button" class="btn btn-success">Success</button>
+				<button type="button" class="btn btn-info">Info</button>
+				<button type="button" class="btn btn-warning">Warning</button>
+				<button type="button" class="btn btn-danger">Danger</button>
+				<button type="button" class="btn btn-link">Link</button>
+				<br /><br />
+				<button type="button" class="btn btn-primary btn-lg"> LG </button>
+				<button type="button" class="btn btn-primary"> Normal </button>
+				<button type="button" class="btn btn-primary btn-sm"> SM </button>
+				<button type="button" class="btn btn-primary btn-xs"> XS </button>
+				<br /><br />
+				<div class="row">
+					<div class="col-sm-3">
+				    	<button type="button" class="btn btn-primary btn-block">Button "block"</button>
+				  	</div>
+				  	<div class="col-sm-6">
+				    	<button type="button" class="btn btn-success btn-block">Button "block"</button>
+				  	</div>
+				  	<div class="col-sm-3">
+				    	<button type="button" class="btn btn-danger btn-block">Button "block"</button>
+				  	</div>
+				</div>
+				<br /><br />
+				<div class="row">
+				  	<div class="col-lg-2">
+				    	<div class="btn-group">
+				        	<a class="btn btn-danger" href="#">1</a>
+				        	<a class="btn btn-info" href="#">2</a>
+				        	<a class="btn btn-warning" href="#">3</a>
+				    	</div>
+				  	</div>
+				  	<div class="col-lg-1">
+				    	<div class="btn-group-vertical">
+				        	<a class="btn btn-danger" href="#">4</a>
+				        	<a class="btn btn-info" href="#">5</a>
+				        	<a class="btn btn-warning" href="#">6</a>
+				    	</div>
+				  	</div>
+				  	<div class="col-lg-2">
+				    	<div class="btn-group btn-group-lg">
+				        	<a class="btn btn-danger" href="#">1</a>
+				        	<a class="btn btn-info" href="#">2</a>
+				        	<a class="btn btn-warning" href="#">3</a>
+				    	</div>
+				  	</div>
+				  	<div class="col-lg-1">
+				    		<div class="btn-group btn-group-xs">
+				        	<a class="btn btn-danger" href="#">4</a>
+				        	<a class="btn btn-info" href="#">5</a>
+				        	<a class="btn btn-warning" href="#">6</a>
+				    	</div>
+				  	</div>
+				</div>
+				<br /><br />
+				<div class="col-lg-6">
+				  	<div class="btn-group btn-group-justified">
+				      	<a class="btn btn-danger" href="#">1</a>
+				      	<a class="btn btn-info" href="#">2</a>
+				      	<a class="btn btn-warning" href="#">3</a>
+				  	</div>
+				</div>
+				<br /><br/>
+				<a class="btn btn-info" href="http://bootsnipp.com/buttons"> Button Generator ! </a>
+				<a class="btn btn-info" href="http://charliepark.org/bootstrap_buttons/"> Button Generator with more option ! </a>
+			</form>
+		</div>
+		<h2> Icons </h2>
+		<div class="container">
+			<form>
+				<div class="btn-group">
+					<a href="http://glyphicons.com/"  class="btn btn-info"> Here the icon list ! </a>
+				</div>
+				<br /><br />
+				<div class="btn-group">
+					<button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-ok-sign"></span> Send </button>
+				</div>
+				<br /><br />
+				<div class="btn-group">
+			  		<button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-ok-sign" style="color:#4f4;"></span> Send </button>
+			  	</div>
+			  	<br /><br />
+				<div class="row" >
+				    <div class="col-lg-3">
+				      	<div class="btn-group">
+				          	<a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-fast-backward"></span></a>
+				          	<a class="btn btn-info" href="#"><span class="glyphicon glyphicon-backward"></span></a>
+				          	<a class="btn btn-warning" href="#"><span class="glyphicon glyphicon-play"></span></a>
+				          	<a class="btn btn-info" href="#"><span class="glyphicon glyphicon-forward"></span></a>
+				          	<a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-fast-forward"></span></a>
+				      	</div>
+				    </div>
+				    <div class="col-lg-1">
+				      	<div class="btn-group-vertical">
+				          	<a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+				          	<a class="btn btn-info" href="#"><span class="glyphicon glyphicon-search"></span></a>
+				          	<a class="btn btn-warning" href="#"><span class="glyphicon glyphicon-print"></span></a>
+				          	<a class="btn btn-success" href="#"><span class="glyphicon glyphicon-picture"></span></a>
+				      	</div>
+				    </div>
+			  	</div>
+			  	<br /><br />
+				<button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-user"></span><br>Users </button>
+				<button class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-comment"></span><br>Comments </button>
+				<button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-calendar"></span><br>Events</button>
+				<button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span><br>Shop</button>
+				<button class="btn btn-info btn-lg"><span class="glyphicon glyphicon-bullhorn"></span><br>Messages</button>
+				<br /><br />
+				<!-- There is specific CSS on the top of the page for it -->
+				<button class="btn btn-primary btn-lg btn-round"><span class="glyphicon glyphicon-user"></span></button>
+				<button class="btn btn-warning btn-lg btn-round"><span class="glyphicon glyphicon-comment"></span></button>
+				<button class="btn btn-success btn-lg btn-round"><span class="glyphicon glyphicon-calendar"></span></button>
+				<button class="btn btn-danger btn-lg btn-round"><span class="glyphicon glyphicon-shopping-cart"></button>
+				<button class="btn btn-info btn-lg btn-round"><span class="glyphicon glyphicon-bullhorn"></span></button>
+			</form>
+		</div>
+		<!-- bootstrap JavaScript + Jquery if requested -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+    	<script src="bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>

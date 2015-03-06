@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/directives-talking-to-controllers/"> Directive to controllers </a>
+		<div ng-app="app" ng-controller="AppCtrl">
+			<h3> Passing function in attribute </h3>
+			<div class="examples">
+				<div enter="LoadStuff()" style="width:300px;" class="panel"> Roll over me to see something happen ! </div>
+				<br><br>
+				<div enter="DeleteStuff()" style="width:300px;" class="panel"> Roll over me to see something happen ! </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('app', []);
+
+			app.controller("AppCtrl", function($scope) {
+					$scope.LoadStuff = function() {
+						alert("I'm loading stuff");
+					}
+
+					$scope.DeleteStuff = function(){
+						alert("I'm deleting stuff")
+					}
+			})
+
+			app.directive("enter", function(){
+				return function(scope, element, attrs)
+				{
+					element.bind("mouseenter", function(){
+						scope.$apply(attrs.enter)
+					})
+				}
+			})
+			
+		</script>
+	</body>
+</html>

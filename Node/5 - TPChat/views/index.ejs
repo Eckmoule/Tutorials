@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Chat room  </title>
+	</head>
+	<body>
+		<h1> The chat room </h1>
+		<form>
+			<label for="tbMessage"> Message : </label><input type="textbox" id="tbMessage" placeholder="Your message" />
+			<input type="submit" id="btnSend" value="Send" />
+		</form>
+		<section id="chatRoom"></section>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="../socket.io/socket.io.js"></script>
+    	<script>
+        	var socket = io.connect('http://localhost:8080');
+        	var login = prompt("Hi, What's your name ?");
+        	socket.emit('login', login);
+            document.title = document.title + " - " + login;
+
+        	$("#btnSend").click(function(){
+        		socket.emit('message', $("#tbMessage").val());
+        		$('#chatRoom').prepend('<p><strong>' + login+ ': </strong> ' + $("#tbMessage").val() + '</p>');
+                $("#tbMessage").val("").focus();
+                return false;
+        	});
+
+        	socket.on('message', function(data){
+        		 $('#chatRoom').prepend('<p><strong>' + data.login + ': </strong> ' + data.message + '</p>');
+        	});
+
+        	socket.on('new_connection', function(login){
+        		 $('#chatRoom').prepend('<p><em>' + login + ' a rejoint le Chat !</em></p>');
+        	});
+        </script>
+	</body>
+</html>

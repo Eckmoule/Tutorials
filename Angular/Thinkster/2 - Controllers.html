@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/controllers/"> Controllers </a>
+		<div ng-app="">
+			<h3> First controller </h3>
+			<div ng-controller="FirstCtrl" class='examples'>
+				{{data.message}}
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>
+			function FirstCtrl($scope){
+		  		$scope.data = {message: "Hello"};
+			}
+		</script>
+	</body>
+</html>

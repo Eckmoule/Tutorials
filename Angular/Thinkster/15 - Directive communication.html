@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/directive-communication/"> Directives communication </a>
+		<div ng-app="app">
+			<h3> Call a controller of an element higher in hierarchy </h3>
+			<div class="examples">
+				<i> look at the console </i>
+				<country>
+					<state>
+						<city>
+						</city>
+					</state>
+				</country>
+			</div>
+			<h3> Call multiple controllers of elements higher in hierarchy </h3>
+			<div class="examples">
+				<i> look at the console </i>
+				<country>
+					<state>
+						<people>
+						</people>
+					</state>
+				</country>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('app', []);
+
+			app.directive("country", function(){
+				return {
+					restrict: "E",
+					controller: function(){
+						this.makeAnnouncement = function(message){
+							console.log("Country says: " + message);
+						};
+					},
+				}
+			});
+
+			app.directive("state", function(){
+				return {
+					restrict: "E",
+					controller: function() {
+						this.makeLaw = function(law){
+							console.log("new law: " + law);
+						};
+					},
+				}
+			});
+
+			app.directive("city", function(){
+				return {
+					restrict: "E",
+					require: "^country",
+					link: function(scope, element, attrs, countryCtrl){
+						countryCtrl.makeAnnouncement("I'm a beautiful country");
+					}
+				}
+			});
+
+			app.directive("people", function(){
+				return {
+					restrict: "E",
+					require: ["^country", "^state"],
+					link: function(scope, element, attrs, ctrls){
+						ctrls[0].makeAnnouncement("I'm a good people");
+						ctrls[1].makeLaw("Do something");
+					}
+				}
+			});
+
+		</script>
+	</body>
+</html>

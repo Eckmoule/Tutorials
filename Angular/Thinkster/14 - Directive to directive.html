@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/directive-to-directive-communication/"> Directive to directive </a>
+		<div ng-app="app">
+			<h3> Share informations </h3>
+			<i> The scope of each button is isolate by using the scope: {} in directive definition </i>
+			<br><br>
+			<div class="examples">
+				<superhero flight speed strength> Superman </superhero>
+				<br>
+				<superhero speed> The Flash </superhero>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('app', []);
+
+			app.directive("superhero", function() {
+				return {
+					restrict: "E",
+					scope: {},
+					controller: function($scope) {
+						$scope.abilities = [];
+
+						this.addStrength = function() {
+							$scope.abilities.push("strength");
+						};
+
+						this.addSpeed = function() {
+							$scope.abilities.push("speed");
+						};
+
+						this.addFlight = function() {
+							$scope.abilities.push("flight");
+						};
+					},
+					link: function(scope, element) {
+						element.addClass("button");
+						element.bind("mouseenter", function() {
+							console.log(scope.abilities);
+						});
+					},
+				}
+			});
+
+			app.directive("strength", function() {
+				return {
+					require: "superhero",
+					link: function(scope, element, attrs, superheroCtrl){
+						superheroCtrl.addStrength();
+					}
+				}
+			});
+
+			app.directive("speed", function() {
+				return {
+					require: "superhero",
+					link: function(scope, element, attrs, superheroCtrl){
+						superheroCtrl.addSpeed();
+					}
+				}
+			});
+
+			app.directive("flight", function() {
+				return {
+					require: "superhero",
+					link: function(scope, element, attrs, superheroCtrl){
+						superheroCtrl.addFlight();
+					}
+				}
+			});
+
+		</script>
+	</body>
+</html>

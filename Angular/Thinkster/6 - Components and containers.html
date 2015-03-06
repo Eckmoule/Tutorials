@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/components-and-containers/"> Components and containers </a>
+		<div ng-app="myApp">
+			<h3> Components </h3>
+			<div class="examples">
+				<clock timezone="MST" hour="12" minute="01"></clock>
+			</div>
+			<h3> Containers </h3>
+			<i> The transclude: true parameters make it happen </i>
+			<br> <br>
+			<div class="examples">
+				<panel title="I'm a panel"> I can have things inside me </panel>
+			</div>
+			<h3> Combine </h3>
+			<div class="examples">
+				<panel title="Clocks inside">
+					<clock timezone="MST" hour="12" minute="02"></clock>
+					<clock timezone="MST" hour="12" minute="03"></clock>
+					<clock timezone="MST" hour="12" minute="04"></clock>
+					<clock timezone="MST" hour="12" minute="05"></clock>
+				</panel>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>
+			var myApp = angular.module('myApp', []);
+			
+			myApp.directive("clock", function() {
+				return {
+					restrict: 'E', //Element ?
+					scope: {
+						timezone: "@", //String ?
+						hour: "@",
+						minute: "@",
+					},
+					template: "<div> {{hour}}:{{minute}}pm {{timezone}} </div>"
+				}
+			})
+
+			myApp.directive("panel", function() {
+				return {
+					restrict: 'E',
+					transclude: true,
+					scope: {
+						title: "@",
+					},
+					template: "<div style='border: 3px solid #000000'>"
+					+"<div>{{title}}</div>"
+					+ "<div ng-transclude></div>"
+					+ "</div>",
+				}
+			})
+		</script>
+	</body>
+</html>

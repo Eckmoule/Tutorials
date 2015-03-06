@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/useful-behaviors/"> Usefull behaviors </a>
+		<div ng-app="app">
+			<h3> Mouseouver / Mouseleave with parameters </h3>
+			<div class="examples">
+				<div enter="panel" style="width:300px"> Come over me ! </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('app', []);
+
+			app.directive("enter", function(){
+				return function(scope, element, attrs) {
+					element.bind("mouseenter", function(){
+						element.addClass(attrs.enter);
+					})
+				}
+			});
+
+			app.directive("leave", function(){
+				return function(scope, element, attrs) {
+					element.bind("mouseleave", function(){
+						element.removeClass(attrs.enter);
+					})
+				}
+			});
+		</script>
+	</body>
+</html>

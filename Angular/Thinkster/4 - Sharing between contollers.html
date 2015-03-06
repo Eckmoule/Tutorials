@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/sharing-data-between-controllers/"> Sharing between controllers </a>
+		<div ng-app="myApp">
+			<h3> Without the variable inside the general scope there is no sharing </h3>
+			<div class="examples">
+				<div ng-controller="FirstCtrl">
+				    <input type="text" ng-model="data.message">
+				    <h1>{{ data.message }}</h1>
+				</div>
+
+				<div ng-controller="SecondCtrl">
+				    <input type="text" ng-model="data.message">
+				    <h1>{{ data.message }}</h1>
+				</div>
+			</div>
+			<h3> We can share data using a service </h3>
+			<div class="examples">
+				<div ng-controller="FirstCtrl">
+				    <input type="text" ng-model="sharedData.message">
+				    <h1>{{ sharedData.message }}</h1>
+				</div>
+
+				<div ng-controller="SecondCtrl">
+				    <input type="text" ng-model="sharedData.message">
+				    <h1>{{ sharedData.message }}</h1>
+				</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>
+			var myApp = angular.module('myApp', []);
+			myApp.factory('Data', function() {
+				return { message: "I'm data from a service"}
+			})
+
+			function FirstCtrl($scope, Data){
+				$scope.sharedData = Data;
+			}
+			
+			function SecondCtrl($scope, Data){
+		  		$scope.sharedData = Data;
+			}
+		</script>
+	</body>
+</html>

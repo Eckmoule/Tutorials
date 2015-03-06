@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title> Tp Todo List </title>
+	</head>
+	<body>
+		<h1> My Todo List </h1>
+		<ul>
+			<% for (var i = 0; i < todoList.length; i++) { %>
+				<li><a href='delete/<%= i %>'> delete </a> <%= todoList[i] %></li>
+			<% } %>
+		</ul>
+		<form method="post">
+			<span> What should I do ? </span><input type="Text" name="newTodo" /><input type="submit" Text="Validate" />
+		</form>
+	</body>
+</html>

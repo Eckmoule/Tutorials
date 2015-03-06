@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="shortcut icon" href="/ico/favicon.png">
+		<title> I'm trying bootstrap </title>
+		<!-- bootstrap.min.css / bootstrap-theme.min.css-->
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<!-- Try also without the theme / Performance -->
+		<link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+		<link href="showDiv.css" rel="stylesheet">
+		 <style type="text/css">
+		    .col-lg-8 { line-height: 200px; }
+		    .col-lg-12 { line-height: 80px; }
+		  </style>
+	</head>
+	<body>
+		<h2> Responsive 1 </h2>
+		<ul>
+			<li> Right aside go bottom on tablet </li>
+			<li> Right aside hidde on smartphone </li>
+		</ul>
+		<div class="container">
+			<header class="row">
+				<div class="col-lg-12">
+					Header
+				</div>
+			</header>
+			<div class="row">
+				<div class="col-lg-2 col-sm-3">
+					<div class="row">
+						<aside class="col-lg-12"> Aside </aside>
+						<aside class="col-lg-12"> Aside </aside>
+					</div>
+				</div>
+				<section class="col-lg-8 col-sm-9">
+					section
+				</section>
+				<div class="col-lg-2 col-sm-12 hidden-xs">
+					<div class="row">
+						<aside class="col-lg-12"> Aside </aside>
+						<aside class="col-lg-12"> Aside </aside>
+					</div>
+				</div>
+			</div>
+			<footer class="row">
+				<div class="col-lg-12">
+					Footer
+				</div>
+			</footer>
+		</div>
+		<h2> Responsive 2 </h2>
+		<ul> 
+			<li> Section stay but nav move on top </li>
+			<li> Header is changing </li>
+		</ul>
+		<div class="container">
+			<header class="row">
+				<div class="visible-lg col-lg-12">
+        			Header big screen
+      			</div>
+      			<div class="visible-md col-sm-12">
+        			Header screen
+      			</div>
+		    	<div class="visible-sm col-12">
+		        	Header tablet
+		     	</div>
+      			<div class="visible-xs col-12">
+        			Header phone
+      			</div>
+			</header>
+			<div class="row">
+				<nav class="col-lg-2 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+					Menu
+				</nav>
+				<section class="col-lg-4 col-sm-5 col-sm-offset-1 col-lg-offset-0">
+					Section
+				</section>
+				<section class="col-lg-4 col-sm-5">
+					Section
+				</section>
+				<footer class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+						Footer
+				</footer>
+			</div>
+		</div>
+    </div>
+		<!-- bootstrap JavaScript + Jquery if requested -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+    	<script src="bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>

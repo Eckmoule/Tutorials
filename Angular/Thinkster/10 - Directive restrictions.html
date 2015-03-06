@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/directive-restrictions/"> Directive restrictions </a>
+		<div ng-app="superhero">
+			<h3> Using directive as an attribute </h3>
+			<div class="examples">
+				<div supermanattribute></div>
+			</div>
+			<h3> Using directive as a class </h3>
+			<div class="examples">
+				<div class="supermanClass"> </div>
+			</div>
+			<h3> Using directive as a markup </h3>
+			<div class="examples">
+				<!-- directive:supermanMarkup -->
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('superhero', []);
+
+			app.directive("supermanattribute", function(){ //apparently upper case doesn't work ... 
+				return {
+					restrict: "A", //attribute
+					link: function(){
+						alert("I'm working as an attribute");
+					}
+				}
+			});
+
+			app.directive("supermanClass", function(){
+				return {
+					restrict: "C", //class
+					link: function(){
+						alert("I'm working as a class");
+					}
+				}
+			});
+
+				app.directive("supermanMarkup", function(){
+				return {
+					restrict: "M", //Markup
+					link: function(){
+						alert("I'm working as a markup");
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

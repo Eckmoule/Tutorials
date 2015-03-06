@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/basic-behaviors/"> Basic behavior </a>
+		<div ng-app="app">
+			<h3> Mouseouver / Mouseleave </h3>
+			<div class="examples">
+				<div enter leave> Come over me ! (and look at the log) </div>
+				<div enterfull leave> Come over me ! (and look at the log) </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('app', []);
+
+			app.directive("enter", function(){
+				return function(scope, element) {
+					element.bind("mouseenter", function(){
+						console.log("You're on it !");
+					})
+				}
+			});
+
+			app.directive("leave", function(){
+				return function(scope, element) {
+					element.bind("mouseleave", function(){
+						console.log("I'm leaving this shit !");
+					})
+				}
+			});
+
+			//An other way to write it 
+			app.directive("enterfull", function() {
+				return {
+					restrict: "A", //Default value can be deleted 
+					link: function(scope, element) {
+						element.bind("mouseenter", function(){
+							console.log("You're on it !");
+						})
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

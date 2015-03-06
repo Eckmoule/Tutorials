@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/binding/"> Binding </a>
+		<div ng-app="">
+			<h3> Basic stuffs </h3>
+			<div class="examples">
+				{{1 + 1}} <br>
+	  			{{"john" + "lindquist"}} <br>
+	  			{{3 * 3}} <br>
+	  		</div>
+	  		<h3> Link to input </h3>
+	  		<div class="examples">
+	  			<input type="text" ng-model="data.message" /><br>
+	  			{{data.message + " Test" }}
+	  		</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+	</body>
+</html>

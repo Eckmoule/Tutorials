@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Tutorials </title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/foundation.min.css">
+	</head>
+	<body>
+		<a href="https://thinkster.io/egghead/understanding-isolate-scope/"> Isolate scope </a>
+		<div ng-app="app">
+			<h3> Elements with same scope </h3>
+			<div class="examples">
+				<kid></kid>
+				<kid></kid>
+			</div>
+			<h3> Element with diffent scope </h3>
+			<div class="examples" ng-controller="taskController">
+				<adult done="Finish(parameter)"></adult>
+				<adult done="Finish(parameter)"></adult>
+			</div>
+		</div>
+		<script type="text/javascript" src="./Angular/Angular1.2.26.js"></script>
+		<script>			
+			var app = angular.module('app', []);
+
+			app.controller("taskController", function($scope){
+					$scope.Finish = function(task){
+						alert(task + " is finish !");
+					};
+			});
+
+			app.directive("kid", function(){
+				return {
+					restrict: "E",
+					template: "<input type='text' ng-model='task' /> {{task}}",
+				}
+			});
+
+			app.directive("adult", function(){
+				return {
+					restrict: "E",
+					scope: {
+						done:"&",
+					},
+					template: "<input type='text' ng-model='task' /> {{task}} <br> <div class='button' ng-click='done({parameter:task})'>I'm done</div>",
+				}
+			});
+
+		</script>
+	</body>
+</html>

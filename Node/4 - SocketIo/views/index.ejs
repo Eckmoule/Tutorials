@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> SocketIo course </title>
+	</head>
+	<body>
+		<h1> Socket Io connection </h1>
+		<input type="button" ID="btnTest" value="Send message to server" onclick="btnTest_click()"/>
+		<script src="../socket.io/socket.io.js"></script>
+    	<script>
+        	var socket = io.connect('http://localhost:8080');
+        	var login = prompt("Hi, What's your name ?");
+        	socket.emit('login', login);
+
+
+        	socket.on('message', function(message){
+        		alert('Server says ' + message);
+        	})
+
+        	function btnTest_click()
+        	{
+        		socket.emit('message', 'Message from client');
+        	}
+    	</script>
+	</body>
+</html>
