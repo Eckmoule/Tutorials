@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Traversing</title>
+	<script src="scripts/jquery-2.1.3.min.js"></script>
+	<script src="scripts/traversing.js"></script>
+</head>
+<body>
+	<p> Traversing is a little bit faster than standard selectors </p>
+	<h3> Descendant selector: $("#descendant").find("li").text("selected"); </h3>
+	<ul id="descendant">
+		<li> Level 1, Item 1</li>
+		<li> Level 1, Item 2 </li>
+		<li> Level 1, Item 3</li>
+		<ul>
+			<li>Level 2, Item 1</li>
+		</ul>
+	</ul>
+	<h3> Pseudo selector: $("#position").find("li").first().text("selected"); + $("#position").find("li").last().text("selected"); </h3>
+	<ul id="position">
+		<li> Level 1, Item 1</li>
+		<li> Level 1, Item 2 </li>
+		<li> Level 1, Item 3</li>
+		<ul>
+			<li>Level 2, Item 1</li>
+		</ul>
+	</ul>
+	<h3> Walking the DOM: $("#walk").find("li").first().next().text("selected"); (!= .prev()</h3>
+	<ul id="walk">
+		<li> Level 1, Item 1</li>
+		<li> Level 1, Item 2 </li>
+		<li> Level 1, Item 3</li>
+		<ul>
+			<li>Level 2, Item 1</li>
+		</ul>
+	</ul>
+	<h3> Walking the DOM 2: $("#parent").children("li").text("selected"); (!= .parent()</h3>
+	<ul id="parent">
+		<li> Level 1, Item 1</li>
+		<li> Level 1, Item 2 </li>
+		<li> Level 1, Item 3</li>
+		<ul>
+			<li>Level 2, Item 1</li>
+		</ul>
+	</ul>
+</body>
+</html>

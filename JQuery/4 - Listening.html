@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Listening</title>
+	<script src="scripts/jquery-2.1.3.min.js"></script>
+	<script src="scripts/listening.js"></script>
+</head>
+<body>
+	<h3> Mouse events </h3> 
+	<code>
+		$(".Test").on("click", "button", function(){ 
+			$(this).closest(".Test").find(".moreInfos").slideToggle(); 
+		});
+	</code> 
+	<h3> Hover </h3>
+	<code>
+		$(".Test").on("mouseenter", "h2", function(){ 
+			$(this).closest(".Test").find(".moreInfos").slideToggle(); 
+		});
+	</code> 
+	<p> The code behind has been refactored to <p>
+	<code> 
+		function showIt(){ $(this).closest(".Test").find(".moreInfos").slideToggle(); }
+		<br />
+		$(".Test").on("click", "button", showIt).on("mouseenter", "h2", showIt).on("mouseleave", "h2", showIt);
+	</code>
+	<div class="Test" style="width: 500px; margin: auto">
+		<h2>Title</h2>
+		<p>Infos</p>
+		<button>buttons</button>
+		<ul class="moreInfos" style="display:none;">
+			<li>
+				infos
+			</li>
+			<li>
+				infos
+			</li>
+			<li>
+				infos
+			</li>
+		</ul>
+	</div>
+	<div class="Test" style="width: 500px; margin: auto">
+		<h2>Title</h2>
+		<p>Infos</p>
+		<button>buttons</button>
+		<ul class="moreInfos" style="display:none;">
+			<li>
+				infos
+			</li>
+			<li>
+				infos
+			</li>
+			<li>
+				infos
+			</li>
+		</ul>
+	</div>
+	<h3> Key events </h3>
+	<code>
+		$(".key").on("keyup", ".quantity", function(){});
+	</code>
+	<div class="key" style="width: 500px; margin: auto">
+		<span class="price" data-price="200"> Price: 200 </span>
+		<span> Quantity: <input type="text" class="quantity" />
+		<span> Result: </span><span class="result"></span>
+	</div>
+	<h3> Event object </h3>
+	<code>
+		$(".event").on("click", "a", function(event){ event.preventDefault(); [...] });
+	</code>
+	<p> It's also possible to use event.stopPropagation() to stop the propogation to other events </p>
+	<div class="event" style="width: 500px; margin: auto">
+		<a href="#"> click me ! </a>
+		<span id="show" style="display: none;"> I'm here </span>
+	</div>
+</body>
+</html>

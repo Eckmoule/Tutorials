@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Style</title>
+	<script src="scripts/jquery-2.1.3.min.js"></script>
+	<script src="scripts/style.js"></script>
+	<style>
+		.color{
+			background-color: #000000;
+			border-color: #666666;
+		}
+
+		ul{
+			height: 120px;
+		}
+
+		li{
+			list-style-type: none;
+			float: left;
+			margin-right: 10px;
+			width: 100px; 
+			height: 100px; 
+			border: 1px solid
+		}
+
+		#css-animation li {
+			-moz-transition: margin-top 0.6s;
+			-o-transition: margin-top 0.6s;
+			-webkit-transition: margin-top 0.6s;
+			transition: margin-top 0.6s;
+		}
+
+		.animated-color{
+			margin-top: -10px;
+		}
+	</style>
+</head>
+<body>
+	<h3> Css function </h3>
+	<code>$("#css").on("click", "li", function(){ $(this).css({"background-color": "#000000", "border-color": "#666666"}); }) </code>
+	<p> It's better to use a Javascript object {""attr":"value", "attr":"value"} than to chain .css functions </p>
+	<p> Also it's always better to use add/remove/toggle class instead of writting css inside of the javascript </p>
+	<ul id="css">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<h3> Class </h3>
+	<code>$("#class").on("click", "li", function(){ $(this).toggleClass("color"); }) </code>
+	<ul id="class">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<h3> Animate </h3>
+	<code>$("#animate").on("click", "li", function(){ $(this).animate({"margin-top" : "-10px"}); }); </code>
+	<ul id="animate">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<h3> Animation speed </h3>
+	<code>$("#speed").on("click", "li", function(){ $(this).animate({"margin-top" : "-10px"}, 'slow'); }); </code>
+	<ul id="speed">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<h3> Css Animations </h3>
+	<code>$("#css-animation").on("click", "li", function(){ $(this).toggleClass("animated-color"); }); </code>
+	<ul id="css-animation">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
