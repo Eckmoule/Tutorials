@@ -22,6 +22,23 @@ app.controller("ReadingListController", function(){
     replace: true,
   };
 })
+.directive("reviewForm", function(){
+  return {
+    restrict: 'E',
+    templateUrl: "partials/review-form.html",
+    replace: true,
+    controller: function(){
+      this.showForm = false;
+      this.book = {};
+    },
+    controllerAs: 'reviewFormCtrl',
+    scope: {
+      books: '=',
+      genres: '='
+    },
+  };
+});
+
 
 //Test datas
 var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
