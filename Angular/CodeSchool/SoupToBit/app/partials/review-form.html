@@ -1,6 +1,6 @@
-<form name="reviewForm" class="form-horizontal">
+<form name="reviewForm" class="form-horizontal" ng-submit="reviewFormCtrl.AddReview(reviewForm)">
 
-  <section class="row well live-preview">
+  <section class="row well live-preview" ng-show="reviewFormCtrl.book.isbn">
     <aside class="col-sm-3">
       <a href="http://www.amazon.com/gp/product/{{reviewFormCtrl.book.isbn}}">
         <img ng-src="http://images.amazon.com/images/P/{{reviewFormCtrl.book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of {{reviewFormCtrl.book.title}}" class="full">
@@ -14,11 +14,7 @@
       </h3>
       <cite class="text-muted">Written by {{reviewFormCtrl.book.author}}</cite>
       <p>{{reviewFormCtrl.book.review}}</p>
-      <ul class="list-unstyled">
-        <li>
-          <span class="label label-primary"></span>
-        </li>
-      </ul>
+      <book-genre genres="reviewFormCtrl.book.genres"></book-genre>
     </div>
   </section>
 
@@ -66,8 +62,9 @@
     <fieldset class="form-group">
       <label class="control-label col-sm-2" >Genre:</label>
       <div class="genre">
-        <label for="{{genre}}" class="genre-label form-control">
-          <input type="checkbox" name="genre" />
+        <label for="{{genre}}" class="genre-label form-control" ng-repeat="genre in genres">
+          <input type="checkbox" name="genre" id="{{genre}}" ng-model="reviewFormCtrl.book.genres[genre]" />
+          {{genre}}
         </label>
       </div>
     </fieldset>

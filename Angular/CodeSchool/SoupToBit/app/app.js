@@ -13,6 +13,9 @@ app.controller("ReadingListController", function(){
     restrict: 'E',
     templateUrl: "partials/book-genre.html",
     replace: true,
+    scope: {
+      genres: '=',
+    },
   };
 })
 .directive("bookCover", function(){
@@ -29,7 +32,13 @@ app.controller("ReadingListController", function(){
     replace: true,
     controller: function(){
       this.showForm = false;
-      this.book = {};
+      this.book = { genres: {} };
+
+      this.AddReview = function(form){
+        books.push(this.book);
+        this.book = { genres: {} };
+        form.$setPristine();
+      };
     },
     controllerAs: 'reviewFormCtrl',
     scope: {
