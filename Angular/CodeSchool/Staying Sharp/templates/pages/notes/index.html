@@ -1,0 +1,8 @@
+List of notes
+<ul>
+	<li ng-repeat="note in indexController.notes">
+		<a ng-href="#/notes/{{note.id}}">{{note.name}}</a>
+		<note-preview description="{{note.description}}"></note-preview>
+	</li>
+</ul>
+<a href="#/notes/new"> Create Note </a>
