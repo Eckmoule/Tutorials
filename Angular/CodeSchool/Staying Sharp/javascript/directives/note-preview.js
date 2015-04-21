@@ -12,7 +12,6 @@ angular.module('NoteWrangler')
 		},
 		link: function(scope, element, attrs){
 			element.on("click", function(){
-				console.log(attrs.description);
 				element(".description").toggleClass("hidden"); //Is there something to do with Jquery ? 
 			});
 		},

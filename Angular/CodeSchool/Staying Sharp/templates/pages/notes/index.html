@@ -1,6 +1,7 @@
-List of notes
+<h3>List of notes</h3>
+<nw-category-select active-category="activeCategory"></nw-category-select>
 <ul>
-	<li ng-repeat="note in indexController.notes">
+	<li ng-repeat="note in notes | filter: { name : activeCategory.name }">
 		<a ng-href="#/notes/{{note.id}}">{{note.name}}</a>
 		<note-preview description="{{note.description}}"></note-preview>
 	</li>

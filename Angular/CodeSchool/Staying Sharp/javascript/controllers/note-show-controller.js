@@ -1,7 +1,7 @@
 angular.module('NoteWrangler')
-.controller('NotesShowController', function($http, $routeParams){
+.controller('NotesShowController', function($routeParams, Note){
 	var controller = this;
-	$http({method: 'GET', url: './data/products.json'}).success(function(data){
+	Note.all().success(function(data){
 		controller.note = data.filter(function(x){ return x.id == $routeParams.id })[0];
 	});
 });
