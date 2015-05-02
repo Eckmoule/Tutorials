@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="StayingSharp">
+	<head>
+		<meta charset="UTF-8">
+		<title>MyApp</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<div class="navbar-brand">
+						<a href="/#/">Staying Sharp</a>
+					</div>
+				</div>
+				<st-page-nav></st-page-nav>
+			</div>
+		</nav>
+		<div class="container" ng-view></div>
+	</body>
+	<!-- Vendors -->
+	<script src="javascript/libraries/angular.js"></script>
+	<script src="javascript/libraries/angular-route.js"></script>
+	<script src="javascript/libraries/angular-resource.js"></script>
+	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+	<script src="javascript/libraries/stGravatar.js"></script>
+	<!-- App -->
+	<script src="javascript/app.js"></script>
+	<script src="javascript/routes.js"></script>
+	<!-- Directives -->
+	<script src="javascript/directives/stPageNav.js"></script>
+	<script src="javascript/directives/stCategorySelector.js"></script>
+	<!-- Controllers -->
+	<script src="javascript/controllers/notes/NoteCreateController.js"></script>
+	<script src="javascript/controllers/notes/NoteEditController.js"></script>
+	<script src="javascript/controllers/notes/NoteIndexController.js"></script>
+	<script src="javascript/controllers/notes/NoteShowController.js"></script>
+	<script src="javascript/controllers/users/UserIndexController.js"></script>
+	<script src="javascript/controllers/users/UserShowController.js"></script>
+	<!-- Filters -->
+	<script src="javascript/filters/categoryFilter.js"></script>
+	<!-- Services -->
+	<script src="javascript/services/note.js"></script>
+	<script src="javascript/services/user.js"></script>
+	<script src="javascript/services/category.js"></script>
+</html>
