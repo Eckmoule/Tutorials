@@ -1,4 +1,13 @@
 Book.destroy_all
+Genre.destroy_all
+Reader.destroy_all
+
+fiction = Genre.create!(name: 'Fiction') #The ! is used to raise an error
+non_fiction = Genre.create!(name: 'Non-Fiction')
+
+paul = Reader.create!(name: 'Paul')
+marc = Reader.create!(name: 'Marc')
+stefan = Reader.create!(name: 'Stefan')
 
 Book.create!([{
 	title: "Zero to One",
@@ -7,6 +16,8 @@ Book.create!([{
 	amazon_id: "0804139296",
 	rating: 5,
 	finished_on: 10.days.ago,
+	genre: fiction,
+	readers: [paul, marc],
 },
 {
 	title: "The Lean Startup",
@@ -15,6 +26,8 @@ Book.create!([{
 	amazon_id: "0307887898",
 	rating: 4,
 	finished_on: 5.days.ago,
+	genre: non_fiction,
+	readers: [stefan, paul, marc],
 },
 {
 	title: "Elon Musk",
@@ -23,6 +36,8 @@ Book.create!([{
 	amazon_id: "0062301233",
 	rating: 5,
 	finished_on: nil,
+	genre: fiction,
+	readers: [],
 }])
 
 p "Created #{Book.count} books"

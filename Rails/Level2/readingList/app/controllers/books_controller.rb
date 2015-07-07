@@ -4,7 +4,14 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    #You don't want to have query in the controller, it will make it messy. 
+    #@books = Book.where(title: params[:keyword])
+    #Better create a search method on the object itself
+    @books = Book.includes(:genre)
+    .includes(:readers)
+    .search(params[:keyword]).genre(params[:genre]).reader(params[:reader])
+    @genres = Genre.all
+    @readers = Reader.all
   end
 
   # GET /books/1
@@ -30,6 +37,7 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -69,6 +77,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :description, :amazon_id)
+      params.require(:book).permit(:title, :author, :description, :amazon_id, :genre_id, :rating, { reader_ids: [] })
     end
 end
