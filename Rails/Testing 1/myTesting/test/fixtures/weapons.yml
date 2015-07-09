@@ -2,13 +2,12 @@
 
 one:
   name: MyString
-  graveyard: MyString
+  zombie_id: 
 
 two:
   name: MyString
-  graveyard: MyString
+  zombie_id: 
 
-Yohan:
-  id: 1
-  name: Yohan
-  graveyard: Home
+sword:
+  name: Sword
+  zombie_id: 1
