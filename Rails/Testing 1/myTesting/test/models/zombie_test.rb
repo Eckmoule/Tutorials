@@ -64,4 +64,5 @@ class ZombieTest < ActiveSupport::TestCase
 		.returns(loc)
 		assert_equal "2, 3", @z.geolocate
 	end
+	
 end

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708195859) do
+ActiveRecord::Schema.define(version: 20150711173531) do
+
+  create_table "houses", force: true do |t|
+    t.string   "name"
+    t.integer  "human_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "houses", ["human_id"], name: "index_houses_on_human_id"
+
+  create_table "humen", force: true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "status"

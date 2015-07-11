@@ -42,3 +42,7 @@ group :test do
 	gem 'shoulda'
 	gem 'mocha'
 end
+
+group :development, :test do
+	gem 'factory_girl_rails'
+end
