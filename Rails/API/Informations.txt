@@ -1,0 +1,41 @@
+Routes:
+
+It's possible to restrict routes in the config/routes.rb (Improve memory use and speed up the routing process)
+
+resources :zombies, except: :destroy 
+resources :zombies, only: :index
+
+Also possible with tabs 
+
+resources :zombies, except: [:edit, :update] 
+
+You can apply the same rule for multiple object with with_options
+
+with_options only: :index do |list_only|
+	list_only.resources :zombies
+	list_only.resources :humans 
+	...
+end 
+
+> rake routes will give you all the routes 
+
+Subdomain:
+
+Keeping our API under its own subdomain allows load balancing traffic at the DNS level
+
+Still in the config/route.rb file
+
+resources :zombies, constraints: { subdomain: 'api' } 
+Will be reachable at http://api.domain/zombies
+
+Add a specific namespace for api 
+namespace :api, path '/', constraints: { subdomain: 'api' } do
+	resources :zombies 
+	resources :humans
+	...
+end
+
+You will need to modify the host file 
+
+127.0.0.1 domain-dev.com
+127.0.0.1 api.domain-dev.com
