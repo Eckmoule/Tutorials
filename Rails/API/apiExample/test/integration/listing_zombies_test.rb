@@ -43,5 +43,4 @@ class ListingZombiesTest < ActionDispatch::IntegrationTest
 		assert_equal 200, response.status
 		assert_equal Mime::XML, response.content_type
 	end
-
 end

@@ -1,6 +1,6 @@
 module Api
 	class Api::ZombiesController < ApplicationController
-
+		
 		def index
 			zombies = Zombie.all #Since rails 4 this returns a scope (no db request done at this point). We can add parameters with the where clause before requesting the database.
 			if weapon = params[:weapon]

@@ -39,3 +39,8 @@ You will need to modify the host file
 
 127.0.0.1 domain-dev.com
 127.0.0.1 api.domain-dev.com
+
+You can change:
+
+protect_from_forgery with: :exception
+protect_from_forgery with: :null_session
