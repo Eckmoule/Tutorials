@@ -1,0 +1,30 @@
+Check versions
+> ruby --version
+> rails --version
+
+Create the rails app
+> rails new ReadingList
+
+Check 
+> rails s (+ go to localhost:3000)
+
+Create db (config db mysql with database.yml)
+> rake db:create
+> rake db:migrate
+
+Initialize git 
+
+ > git init (check .gitignore should ignore the logs, /tmp, .SQLite database, /.bundle) 
+
+First funtionality list books 
+
+> rails g integration_test listing_books
+# Write test listing books
+# Make it work:
+- Configure route in routes.rb
+- Create a bookcontroller
+# Add to the test an assert to the number of books and the setup (think about the model you want)
+# Make it work
+> rails g model book title rating:integer --no-fixture (to avoid confusion in testing we remove the fixture)
+> rake db:migrate
+- Modify books_controller
