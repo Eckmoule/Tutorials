@@ -5,6 +5,8 @@ Check versions
 Create the rails app
 > rails new ReadingList
 
+Uncomment debuger gem in GemFile + run bundle command
+
 Check 
 > rails s (+ go to localhost:3000)
 
@@ -58,3 +60,32 @@ First funtionality list books
 - Adapt controller to make it worked 
 - Write an invalid creation test
 - Adapt controller to make it worked (adapt model to validates fields)
+
+#Delete a book
+> rails g integration_test deleting_books
+- Write valid deletion test
+- Adapt controller to make it worked 
+
+#Adapt api to make it worked with external front 
+- Add active_model_serializers to GemFile
+> bundle (import the gem)
+> rails g serializer book #This will encapsulated respond into books, book, ... 
+
+#Add new properties to book
+- Modify creation test
+- Adapt controller (permit)
+> rails g migration add missing_attributes_to_books
+- Update created file
+> rake db:migrate
+- Adapt serializer 
+
+#Add genres 
+> rails g integration_test listing_genres
+- Write a lists genres test
+- Create a controller 
+> rails g model genre name --no-fixture
+> rake db:migrate
+
+#Add relation between books and genres 
+- Adapt listing_books test (add genre to setup and test return)
+- Add the relation inside genre model and book model
