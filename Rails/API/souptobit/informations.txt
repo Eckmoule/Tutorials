@@ -16,6 +16,10 @@ Initialize git
 
  > git init (check .gitignore should ignore the logs, /tmp, .SQLite database, /.bundle) 
 
+ We can make tests looks better in the console with minitest (in test_helper.rb). 
+
+
+
 First funtionality list books 
 
 > rails g integration_test listing_books
@@ -28,3 +32,29 @@ First funtionality list books
 > rails g model book title rating:integer --no-fixture (to avoid confusion in testing we remove the fixture)
 > rake db:migrate
 - Modify books_controller
+
+#Add books inside the seed (db)
+> rake db:seed
+
+#Restricts the routes
+
+#Add a filter by rating
+- Write an integration test 
+- Adapt book controller 
+
+#Add an end point for finished books
+> rails g integration_test listing_finished_books
+- Write specific test for json and xml
+- Add the routes
+- Add the controller 
+- Add the finished_at property to the object 
+> rails g migration add_finished_at_to_books finished_at:datetime
+> rake db:migrate (rails_env=test)
+- Write a scope inside the book model to avoid having request in the controller
+
+#Create a book 
+> rails g integration_test creating_books
+- Write valid creation test
+- Adapt controller to make it worked 
+- Write an invalid creation test
+- Adapt controller to make it worked (adapt model to validates fields)
