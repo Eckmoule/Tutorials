@@ -89,3 +89,14 @@ First funtionality list books
 #Add relation between books and genres 
 - Adapt listing_books test (add genre to setup and test return)
 - Add the relation inside genre model and book model
+
+#Add namespace for api 
+- Modify route.rb
+- Adapt tests
+- Adapt controller to add Api
+
+#Add Angular 
+- Add javascripts files into /vendors 
+- Add js files into /app/assets/javascript
+- Add template into /public ? (It would be better in the app/views but doesn't work)
+- Make api on a subdomain ?

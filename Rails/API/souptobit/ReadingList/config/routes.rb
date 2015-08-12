@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :books, only: [:index, :create, :destroy] #except: [:destroy, :update]
-  resources :finished_books
-  resources :genres
+  namespace :api do
+  	resources :books, only: [:index, :create, :destroy] #except: [:destroy, :update]
+  	resources :finished_books
+  	resources :genres
+  end
+  
+  root to: 'home#show'
 end

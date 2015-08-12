@@ -1,0 +1,1 @@
+angular.module('ReadingList', ['ngRoute', 'ngResource']);
